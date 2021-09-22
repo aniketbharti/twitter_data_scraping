@@ -1,0 +1,705 @@
+import langid
+import json
+from bson import json_util
+
+x = [
+    {
+        "id": 1,
+        "name": "कोविशील्ड",
+        "count": 500,
+        "lang": "hi",
+        "country": "India"
+    },
+    {
+        "id": 2,
+        "name": "covidvaccination",
+        "count": 500,
+        "lang": "en",
+        "country": "USA"
+    },
+    {
+        "id": 3,
+        "name": "vacuna covid",
+        "count": 500,
+        "lang": "es",
+        "country": "Mexico"
+    },
+    {
+        "id": 4,
+        "name": "टीकाकरण",
+        "count": 500,
+        "lang": "hi",
+        "country": "India"
+    },
+    {
+        "id": 5,
+        "name": "moderna",
+        "count": 500,
+        "lang": "en",
+        "country": "USA"
+    },
+    {
+        "id": 6,
+        "name": "campaña de vacunación",
+        "count": 500,
+        "lang": "es",
+        "country": "Mexico"
+    },
+    {
+        "id": 7,
+        "name": "वाइरस",
+        "count": 500,
+        "lang": "hi",
+        "country": "India"
+    },
+    {
+        "id": 8,
+        "name": "booster shots",
+        "count": 500,
+        "lang": "en",
+        "country": "USA"
+    },
+    {
+        "id": 9,
+        "name": "inyección de refuerzo",
+        "count": 500,
+        "lang": "es",
+        "country": "Mexico"
+    },
+    {
+        "id": 10,
+        "name": "खुराक",
+        "count": 500,
+        "lang": "hi",
+        "country": "India"
+    },
+    {
+        "id": 11,
+        "name": "side effect",
+        "count": 500,
+        "lang": "en",
+        "country": "USA"
+    },
+    {
+        "id": 12,
+        "name": "eficacia",
+        "count": 500,
+        "lang": "es",
+        "country": "Mexico"
+    },
+
+    {
+        "id": 13,
+        "name": "फाइजर",
+        "count": 500,
+        "lang": "hi",
+        "country": "India"
+    },
+    {
+        "id": 14,
+        "name": "clinical trials",
+        "count": 500,
+        "lang": "en",
+        "country": "USA"
+    },
+    {
+        "id": 15,
+        "name": "cilindro de oxígeno",
+        "count": 500,
+        "lang": "es",
+        "country": "Mexico"
+    },
+    {
+        "id": 16,
+        "name": "संगरोध",
+        "count": 500,
+        "lang": "hi",
+        "country": "India"
+    },
+    {
+        "id": 17,
+        "name": "covid symptoms",
+        "count": 500,
+        "lang": "en",
+        "country": "USA"
+    },
+    {
+        "id": 18,
+        "name": "autoaislamiento",
+        "count": 500,
+        "lang": "es",
+        "country": "Mexico"
+    },
+    {
+        "id": 19,
+        "name": "डेल्टा संस्करण",
+        "count": 500,
+        "lang": "hi",
+        "country": "India"
+    },
+    {
+        "id": 20,
+        "name": "mask mandate",
+        "count": 500,
+        "lang": "en",
+        "country": "USA"
+    },
+    {
+        "id": 21,
+        "name": "yomequedoencasa",
+        "count": 500,
+        "lang": "es",
+        "country": "Mexico"
+    },
+    {
+        "id": 22,
+        "name": "कोविड मृत्यु",
+        "count": 500,
+        "lang": "hi",
+        "country": "India"
+    },
+    {
+        "id": 23,
+        "name": "travelban",
+        "count": 500,
+        "lang": "en",
+        "country": "USA"
+    },
+    {
+        "id": 24,
+        "name": "distancia social",
+        "count": 24,
+        "lang": "es",
+        "country": "Mexico"
+    },
+    {
+        "id": 25,
+        "name": "सैनिटाइज़र",
+        "count": 500,
+        "lang": "hi",
+        "country": "India"
+    },
+    {
+        "id": 26,
+        "name": "immunity",
+        "count": 500,
+        "lang": "en",
+        "country": "USA"
+    },
+    {
+        "id": 27,
+        "name": "dosis de vacuna",
+        "count": 500,
+        "lang": "es",
+        "country": "Mexico"
+    },
+    {
+        "id": 28,
+        "name": "वैक्सीन पासपोर्ट",
+        "count": 500,
+        "lang": "hi",
+        "country": "India"
+    },
+    {
+        "id": 29,
+        "name": "jab",
+        "count": 500,
+        "lang": "en",
+        "country": "USA"
+    },
+    {
+        "id": 30,
+        "name": "ivermectin",
+        "count": 500,
+        "lang": "es",
+        "country": "Mexico"
+    }
+]
+
+keyword = {
+    "covid": [
+      "quarentena",
+      "hospital",
+      "covidresources",
+      "rt-pcr",
+      "वैश्विकमहामारी",
+      "oxygen",
+      "सुरक्षित रहें",
+      "stayhomestaysafe",
+      "covid19",
+      "quarantine",
+      "मास्क",
+      "face mask",
+      "covidsecondwaveinindia",
+      "flattenthecurve",
+      "corona virus",
+      "wuhan",
+      "cierredeemergencia",
+      "autoaislamiento",
+      "sintomas",
+      "covid positive",
+      "casos",
+      "कोविड मृत्यु",
+      "स्वयं चुना एकांत",
+      "stay safe",
+      "#deltavariant",
+      "covid symptoms",
+      "sarscov2",
+      "covidiots",
+      "brote",
+      "alcohol en gel",
+      "disease",
+      "asintomático",
+      "टीकाकरण",
+      "encierro",
+      "covidiot",
+      "covidappropriatebehaviour",
+      "fever",
+      "pandemia de covid-19",
+      "wearamask",
+      "flatten the curve",
+      "oxígeno",
+      "desinfectante",
+      "super-spreader",
+      "ventilador",
+      "coronawarriors",
+      "quedate en casa",
+      "mascaras",
+      "mascara facial",
+      "trabajar desde casa",
+      "संगरोध",
+      "immunity",
+      "स्वयं संगरोध",
+      "डेल्टा संस्करण",
+      "mask mandate",
+      "health",
+      "dogajkidoori",
+      "travelban",
+      "cilindro de oxígeno",
+      "covid",
+      "staysafe",
+      "variant",
+      "yomequedoencasa",
+      "doctor",
+      "एंटीबॉडी",
+      "दूसरीलहर",
+      "distancia social",
+      "मुखौटा",
+      "covid test",
+      "अस्पताल",
+      "covid deaths",
+      "कोविड19",
+      "muvariant",
+      "susanadistancia",
+      "personal protective equipment",
+      "remdisivir",
+      "quedateencasa",
+      "asymptomatic",
+      "social distancing",
+      "distanciamiento social",
+      "cdc",
+      "transmission",
+      "epidemic",
+      "social distance",
+      "herd immunity",
+      "transmisión",
+      "सैनिटाइज़र",
+      "indiafightscorona",
+      "surgical mask",
+      "facemask",
+      "desinfectar",
+      "वायरस",
+      "संक्रमण",
+      "symptoms",
+      "सामाजिक दूरी",
+      "covid cases",
+      "ppe",
+      "sars",
+      "autocuarentena",
+      "प्रक्षालक",
+      "breakthechain",
+      "stayhomesavelives",
+      "coronavirusupdates",
+      "sanitize",
+      "covidinquirynow",
+      "क ोरोना",
+      "workfromhome",
+      "outbreak",
+      "flu",
+      "sanitizer",
+      "distanciamientosocial",
+      "variante",
+      "कोविड 19",
+      "कोविड-19",
+      "covid pneumonia",
+      "कोविड",
+      "pandemic",
+      "icu",
+      "वाइरस",
+      "contagios",
+      "वेंटिलेटर",
+      "washyourhands",
+      "n95",
+      "stayhome",
+      "lavadodemanos",
+      "fauci",
+      "रोग प्रतिरोधक शक्ति",
+      "maskmandate",
+      "डेल्टा",
+      "कोविड महामारी",
+      "third wave",
+      "epidemia",
+      "fiebre",
+      "मौत",
+      "travel ban",
+      "फ़्लू",
+      "muerte",
+      "स्वच्छ",
+      "washhands",
+      "enfermedad",
+      "contagio",
+      "infección",
+      "faceshield",
+      "self-quarantine",
+      "remdesivir",
+      "oxygen cylinder",
+      "mypandemicsurvivalplan",
+      "कोविड के केस",
+      "delta variant",
+      "wuhan virus",
+      "लक्षण",
+      "corona",
+      "maskup",
+      "gocoronago",
+      "death",
+      "curfew",
+      "socialdistance",
+      "second wave",
+      "máscara",
+      "stayathome",
+      "positive",
+      "lockdown",
+      "propagación en la comunidad",
+      "तीसरी लहर",
+      "aislamiento",
+      "rtpcr",
+      "coronavirus",
+      "variante delta",
+      "distanciasocial",
+      "cubrebocas",
+      "घर पर रहें",
+      "socialdistancing",
+      "covidwarriors",
+      "प्रकोप",
+      "covid-19",
+      "stay home",
+      "संक्रमित",
+      "jantacurfew",
+      "cowin",
+      "कोरोनावाइरस",
+      "virus",
+      "distanciamiento",
+      "cuarentena",
+      "indiafightscovid19",
+      "healthcare",
+      "natocorona",
+      "मास्क पहनें",
+      "delta",
+      "ऑक्सीजन",
+      "wearmask",
+      "कोरोनावायरस",
+      "ventilator",
+      "pneumonia",
+      "maskupindia",
+      "ppe kit",
+      "sars-cov-2",
+      "testing",
+      "fightagainstcovid19",
+      "महामारी",
+      "नियंत्रण क्षेत्र",
+      "who",
+      "mask",
+      "pandemia",
+      "deltavariant",
+      "वैश्विक महामारी",
+      "रोग",
+      "síntomas",
+      "work from home",
+      "antibodies",
+      "masks",
+      "confinamiento",
+      "flattening the curve",
+      "मुखौटा जनादेश",
+      "thirdwave",
+      "mascarilla",
+      "usacubrebocas",
+      "covidemergency",
+      "inmunidad",
+      "cierre de emergencia",
+      "self-isolation",
+      "स्वास्थ्य सेवा",
+      "सोशल डिस्टन्सिंग",
+      "isolation",
+      "cases",
+      "community spread",
+      "unite2fightcorona",
+      "oxygencrisis",
+      "containment zones",
+      "homequarantine",
+      "स्पर्शोन्मुख",
+      "लॉकडाउन",
+      "hospitalización",
+      "incubation period"
+    ],
+    "vaccine": [
+      "anticuerpos",
+      "vaccine mandate",
+      "eficacia de la vacuna",
+      "vacuna covid",
+      "covidvaccine",
+      "zycov-d",
+      "vaccines",
+      "#largestvaccinedrive",
+      "vaccination",
+      "dosis de vacuna",
+      "moderna",
+      "campaña de vacunación",
+      "vaccineshortage",
+      "vacunar",
+      "covid vaccine",
+      "efectos secundarios de la vacuna",
+      "कोविशील्ड",
+      "hydroxychloroquine",
+      "efficacy",
+      "टीके",
+      "टीकाकरण",
+      "वैक्सीनेशन",
+      "shots",
+      "covishield",
+      "vaccine",
+      "antibody",
+      "j&j vaccine",
+      "booster shot",
+      "वैक्सीन पासपोर्ट",
+      "covidvaccination",
+      "दूसरी खुराक",
+      "inyección de refuerzo",
+      "astrazeneca",
+      "टीकाकरण अभियान",
+      "vacunacovid19",
+      "johnson & johnson",
+      "पहली खुराक",
+      "sinopharm",
+      "immunity",
+      "vaccination drive",
+      "inmunización",
+      "vaccine dose",
+      "we4vaccine",
+      "पूर्ण टीकाकरण",
+      "vaccine passports",
+      "ए ंटीबॉडी",
+      "vacunado",
+      "vacunarse",
+      "johnson",
+      "efecto secundario",
+      "astra zeneca",
+      "yomevacunoseguro",
+      "injection",
+      "cdc",
+      "वैक्सीन के साइड इफेक्ट",
+      "getvaxxed",
+      "teeka",
+      "टीका",
+      "herd immunity",
+      "वैक्सीन जनादेश",
+      "vaccinepassports",
+      "estrategiadevacunación",
+      "ivermectin",
+      "cansino",
+      "vacunas",
+      "vaccinehesitancy",
+      "sputnik",
+      "johnson & johnson’s janssen",
+      "unvaccinated",
+      "janssen",
+      "sputnik v",
+      "vacunaton",
+      "seconddose",
+      "कोवेक्सिन",
+      "getvaccinatednow",
+      "tikakaran",
+      "कोविशिल्ड",
+      "खुराक",
+      "covaxine",
+      "mrna",
+      "first dose",
+      "वाइरस",
+      "booster shots",
+      "dosis",
+      "side effect",
+      "रोग प्रतिरोधक शक्ति",
+      "jab",
+      "get vaccinated",
+      "vaccinessavelives",
+      "pinchazo",
+      "vaccinesideeffects",
+      "vaccinated",
+      "कोविड का टीका",
+      "खराब असर",
+      "vacunación",
+      "कोवैक्सिन",
+      "tikautsav",
+      "efectos secundarios",
+      "remdesivir",
+      "covid19vaccine",
+      "eficacia",
+      "anticuerpo",
+      "vaccinequity",
+      "vaccinesamvaad",
+      "फाइजर",
+      "vaccinesamvad",
+      "covid-19 vaccine",
+      "pasaporte de vacuna",
+      "largestvaccinationdrive",
+      "firstdose",
+      "doses",
+      "vacuna",
+      "la inmunidad de grupo",
+      "कोवैक्सीन",
+      "vaccine side effects",
+      "कोविन",
+      "vaccinationdrive",
+      "clinical trial",
+      "vaccinemandate",
+      "segunda dosis",
+      "cowin",
+      "vaccinate",
+      "clinical trials",
+      "fully vaccinated",
+      "johnson and johnson",
+      "primera dosis",
+      "largestvaccinedrive",
+      "vaccine hesitancy",
+      "वैक्सीन",
+      "प्रभाव",
+      "vacunacion",
+      "second dose",
+      "sabkovaccinemuftvaccine",
+      "लसीकरण",
+      "vaccineswork",
+      "वैक्\u200dसीन",
+      "दुष्प्रभाव",
+      "pfizer",
+      "vaccine efficacy",
+      "टीका लगवाएं",
+      "एमआरएनए वैक्सीन",
+      "antibodies",
+      "getvaccinated",
+      "covidshield",
+      "booster",
+      "टीका_जीत_का",
+      "vaccine jab",
+      "vaccine passport",
+      "vaccinepassport",
+      "mrna vaccine",
+      "inmunidad",
+      "एस्ट्राजेनेका",
+      "mandato de vacuna",
+      "astrazenca",
+      "vacúnate",
+      "vacuna para el covid-19",
+      "vacunada",
+      "side effects",
+      "dose",
+      "novavax",
+      "j&j",
+      "covaxin",
+      "fullyvaccinated",
+      "sputnikv",
+      "कोविड टीका",
+      "completamente vacunado",
+      "novaccinepassports",
+      "sinovac"
+    ]
+  }
+  
+
+
+x = list(map(lambda x: x['name'], x))
+covid = [ data for data in keyword['covid'] if not data in x]
+vaccine = [ data for data in keyword['vaccine'] if not data in x]
+
+covid_dict = {
+    "covid": {},
+    "vaccine": {}
+}
+vaccine_dict = {}
+i = 30
+for key in covid:
+    lang =  langid.classify(key)[0]
+    if lang == 'hi':
+        country = "India"
+    elif lang == 'es':
+        country = "Mexico"
+    else:
+        country = "USA"
+    if not(lang in ['hi', 'es']):
+        lang = 'en'
+    if not(lang in covid_dict['covid']):
+        data =  {
+            "id":   i,
+            "name": key,
+            "count": 500,
+            "lang": lang,
+            "country": country
+            }
+        print(lang in covid_dict['covid'])
+        covid_dict['covid'][lang] = [key]
+    else:
+        data =  {
+            "id":   i,
+            "name": key,
+            "count": 500,
+            "lang": lang,
+            "country": country
+            }
+        covid_dict['covid'][lang].append(data)    
+    i = i+1
+
+
+
+for key in vaccine:
+    lang =  langid.classify(key)[0]
+    if lang == 'hi':
+        country = "India"
+    elif lang == 'es':
+        country = "Mexico"
+    else:
+        country = "USA"
+    if not(lang in ['hi', 'es']):
+        lang = 'en'
+    if not(lang in covid_dict['vaccine']):
+        data =  {
+            "id":   i,
+            "name": key,
+            "count": 500,
+            "lang": lang,
+            "country": country
+            }
+        print(lang in covid_dict['vaccine'])
+        covid_dict['vaccine'][lang] = [key]
+    else:
+        data =  {
+            "id":   i,
+            "name": key,
+            "count": 500,
+            "lang": lang,
+            "country": country
+            }
+        covid_dict['vaccine'][lang].append(data)    
+    i = i+1
+
+
+print(covid_dict)
+with open("covidkey", "w",  encoding='utf-8') as json_file:
+    json.dump(covid_dict, json_file, default= json_util.default,ensure_ascii=False)

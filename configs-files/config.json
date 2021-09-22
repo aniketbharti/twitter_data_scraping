@@ -1,0 +1,318 @@
+{
+  "pois": [
+    {
+      "id": 1,
+      "screen_name": "SSalud_mx",
+      "country": "Mexico",
+      "count": 500
+    },
+    {
+      "id": 2,
+      "screen_name": "lopezobrador_",
+      "country": "Mexico",
+      "count": 500
+    },
+    {
+      "id": 3,
+      "screen_name": "EPN",
+      "country": "Mexico",
+      "count": 500
+    },
+    {
+      "id": 4,
+      "screen_name": "JoseNarroR",
+      "country": "Mexico",
+      "count": 500
+    },
+    {
+      "id": 5,
+      "screen_name": "VicenteFoxQue",
+      "country": "Mexico",
+      "count": 500
+    },
+    {
+      "id": 6,
+      "screen_name": "JACVillalobos",
+      "country": "Mexico",
+      "count": 500
+    },
+    {
+      "id": 7,
+      "screen_name": "alefrausto",
+      "country": "Mexico",
+      "count": 500
+    },
+    {
+      "id": 8,
+      "screen_name": "m_ebrard",
+      "country": "Mexico",
+      "count": 500
+    },
+    {
+      "id": 9,
+      "screen_name": "HLGatell",
+      "country": "Mexico",
+      "count": 500
+    },
+    {
+      "id": 9,
+      "screen_name": "HLGatell",
+      "country": "Mexico",
+      "count": 500
+    },
+    {
+      "id": 10,
+      "screen_name": "jefafabiana",
+      "country": "Mexico",
+      "count": 500
+    },
+    {
+      "id": 11,
+      "screen_name": "narendramodi",
+      "country": "India",
+      "count": 500
+    },
+    {
+      "id": 12,
+      "screen_name": "ArvindKejriwal",
+      "country": "India",
+      "count": 500
+    },
+    {
+      "id": 13,
+      "screen_name": "RahulGandhi",
+      "country": "India",
+      "count": 500
+    },
+    {
+      "id": 14,
+      "screen_name": "MoHFW_INDIA",
+      "country": "India",
+      "count": 500
+    },
+    {
+      "id": 15,
+      "screen_name": "myogiadityanath",
+      "country": "India",
+      "count": 500
+    },
+    {
+      "id": 16,
+      "screen_name": "drharshvardhan",
+      "country": "India",
+      "count": 500
+    },
+    {
+      "id": 17,
+      "screen_name": "mansukhmandviya",
+      "country": "India",
+      "count": 500
+    },
+    {
+      "id": 18,
+      "screen_name": "MamataOfficial",
+      "country": "India",
+      "count": 500
+    },
+    {
+      "id": 19,
+      "screen_name": "rajeshtope11",
+      "country": "India",
+      "count": 500
+    },
+    {
+      "id": 20,
+      "screen_name": "SatyendarJain",
+      "country": "India",
+      "count": 500
+    },
+    {
+      "id": 21,
+      "screen_name": "JoeBiden",
+      "country": "USA",
+      "count": 500
+    },
+    {
+      "id": 22,
+      "screen_name": "HHSGov",
+      "country": "USA",
+      "count": 500
+    },
+    {
+      "id": 23,
+      "screen_name": "BarackObama",
+      "country": "USA",
+      "count": 500
+    },
+    {
+      "id": 24,
+      "screen_name": "NIHDirector",
+      "country": "USA",
+      "count": 500
+    },
+    {
+      "id": 25,
+      "screen_name": "CDCgov",
+      "country": "USA",
+      "count": 500
+    },
+    {
+      "id": 26,
+      "screen_name": "trvrb",
+      "country": "USA",
+      "count": 500
+    },
+    {
+      "id": 27,
+      "screen_name": "VP",
+      "country": "USA",
+      "count": 500
+    },
+    {
+      "id": 28,
+      "screen_name": "trvrb",
+      "country": "USA",
+      "count": 500
+    },
+    {
+      "id": 29,
+      "screen_name": "NYGovCuomo",
+      "country": "USA",
+      "count": 500
+    },
+    {
+      "id": 30,
+      "screen_name": "XavierBecerra",
+      "country": "USA",
+      "count": 500
+    }
+  ],
+  "keywords": [
+    {
+      "id": 301,
+      "name": "vacunas",
+      "count": 500,
+      "lang": "es",
+      "country": "Mexico"
+    },
+    {
+      "id": 299,
+      "name": "estrategiadevacunación",
+      "count": 500,
+      "lang": "es",
+      "country": "Mexico"
+    },
+    {
+      "id": 289,
+      "name": "yomevacunoseguro",
+      "count": 500,
+      "lang": "es",
+      "country": "Mexico"
+    },
+    {
+      "id": 284,
+      "name": "vacunado",
+      "count": 500,
+      "lang": "es",
+      "country": "Mexico"
+    },
+    {
+      "id": 287,
+      "name": "efecto secundario",
+      "count": 500,
+      "lang": "es",
+      "country": "Mexico"
+    },
+    {
+      "id": 273,
+      "name": "vacunacovid19",
+      "count": 500,
+      "lang": "es",
+      "country": "Mexico"
+    },
+    {
+      "id": 259,
+      "name": "efectos secundarios de la vacuna",
+      "count": 500,
+      "lang": "es",
+      "country": "Mexico"
+    },
+    {
+      "id": 278,
+      "name": "inmunización",
+      "count": 500,
+      "lang": "es",
+      "country": "Mexico"
+    },
+    {
+      "id": 285,
+      "name": "vacunarse",
+      "count": 500,
+      "lang": "es",
+      "country": "Mexico"
+    },
+    {
+      "id": 300,
+      "name": "cansino",
+      "count": 500,
+      "lang": "es",
+      "country": "Mexico"
+    },
+    {
+      "id": 321,
+      "name": "pinchazo",
+      "count": 500,
+      "lang": "es",
+      "country": "Mexico"
+    },
+    {
+      "id": 337,
+      "name": "pasaporte de vacuna",
+      "count": 500,
+      "lang": "es",
+      "country": "Mexico"
+    },
+    {
+      "id": 349,
+      "name": "segunda dosis",
+      "count": 500,
+      "lang": "es",
+      "country": "Mexico"
+    },
+    {
+      "id": 354,
+      "name": "primera dosis",
+      "count": 500,
+      "lang": "es",
+      "country": "Mexico"
+    },
+    {
+      "id": 383,
+      "name": "vacúnate",
+      "count": 500,
+      "lang": "es",
+      "country": "Mexico"
+    },
+    {
+      "id": 385,
+      "name": "vacunada",
+      "count": 500,
+      "lang": "es",
+      "country": "Mexico"
+    },
+    {
+      "id": 341,
+      "name": "vacuna",
+      "count": 500,
+      "lang": "en",
+      "country": "Mexico"
+    },
+    {
+      "id": 308,
+      "name": "vacunaton",
+      "count": 500,
+      "lang": "en",
+      "country": "Mexico"
+    }
+  ]
+}

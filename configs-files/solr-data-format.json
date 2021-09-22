@@ -1,0 +1,94 @@
+{
+  "add-field": [
+    {
+      "name": "poi_name",
+      "type": "string",
+      "multiValued": false
+    },
+    {
+      "name": "poi_id",
+      "type": "plong",
+      "multiValued": false
+    },
+    {
+      "name": "verified",
+      "type": "boolean",
+      "multiValued": false
+    },
+    {
+      "name": "country",
+      "type": "string",
+      "multiValued": false
+    },
+    {
+      "name": "replied_to_tweet_id",
+      "type": "plong",
+      "multiValued": false
+    },
+    {
+      "name": "replied_to_user_id",
+      "type": "plong",
+      "multiValued": false
+    },
+    {
+      "name": "reply_text",
+      "type": "text_general",
+      "multiValued": false
+    },
+    {
+      "name": "tweet_text",
+      "type": "text_general",
+      "multiValued": false
+    },
+    {
+      "name": "tweet_lang",
+      "type": "string",
+      "multiValued": false
+    },
+    {
+      "name": "text_en",
+      "type": "text_en",
+      "multiValued": false
+    },
+    {
+      "name": "text_hi",
+      "type": "text_hi",
+      "multiValued": false
+    },
+    {
+      "name": "text_es",
+      "type": "text_es",
+      "multiValued": false
+    },
+    {
+      "name": "hashtags",
+      "type": "strings",
+      "multiValued": true
+    },
+    {
+      "name": "mentions",
+      "type": "strings",
+      "multiValued": true
+    },
+    {
+      "name": "tweet_urls",
+      "type": "strings",
+      "multiValued": true
+    },
+    {
+      "name": "tweet_emoticons",
+      "type": "strings",
+      "multiValued": true
+    },
+    {
+      "name": "tweet_date",
+      "type": "pdate",
+      "multiValued": false
+    },
+    {
+      "name": "geolocation",
+      "type": "string",
+      "multiValued": true
+    }
+  ]
+}
